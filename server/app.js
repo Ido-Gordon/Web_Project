@@ -27,7 +27,7 @@ app.listen(port, () => {
 app.use(express.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../index0.html'));
+  res.sendFile(path.join(__dirname, '../index.html'));
 });
 
 app.use(express.static(path.join(__dirname, '../')));
@@ -46,18 +46,18 @@ app.post('/login', async (req, res) => {
     console.log('rows:', rows);
     if (rows.length > 0) {
       const fullname = encodeURIComponent(rows[0].fullname);
-      res.redirect(`/index.html?fullname=${fullname}`);
+      res.redirect(`/menu.html?fullname=${fullname}`);
     } else {
       res.status(401).send(`
         <link rel="stylesheet" href="styles.css">
         <div class="success-message-box">
           <div class="icon">❌</div>
           <h2>מייל או סיסמה שגויים</h2>
-          <p><a href="index0.html" class="success-btn">חזרה לעמוד התחברות</a></p>
+          <p><a href="index.html" class="success-btn">חזרה לעמוד התחברות</a></p>
         </div>
          <script>
           setTimeout(function() {
-            window.location.href = "index0.html";
+            window.location.href = "menu.html";
           }, 5000);
         </script>
       `);
@@ -114,7 +114,7 @@ app.post('/register', async (req, res) => {
     </div>
       <script>
         setTimeout(function() {
-          window.location.href = "index0.html";
+          window.location.href = "menu.html";
         }, 5000);
       </script>
     `);

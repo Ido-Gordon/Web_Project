@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (logoutBtn) {
       logoutBtn.addEventListener("click", () => {
         alert("להתראות!");
-        window.location.href = "index0.html";
+        window.location.href = "index.html";
       });
     }
   });
