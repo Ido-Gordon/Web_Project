@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8">
+  <title>מחשבון דק</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="calc.js" defer></script>
+</head>
+<body>
+
+  <!-- כותרת עליונה עם לוגו מקפץ -->
+  <header>
+    <div class="logo-container">
+      <img id="Logo" src="Logo.png" alt="לוגו">
+      <h1>מחשבון חישוב עצים לדק</h1>
+    </div>
+  </header>
+
+  <!-- סרגל ניווט -->
+  <nav class="buttons-container">
+    <button onclick="window.location.href='index.html'">דף הבית</button>
+    <button onclick="window.location.href='fence-calculator.html'">מחשבון גדרות</button>
+    <button onclick="window.location.href='block-calculator.html'">מחשבון בלוקים</button>
+  </nav>
+
+  <!-- טופס מחשבון -->
+  <main>
+    <section class="login-form">
+      <label>רוחב לוח עץ (ס"מ):</label>
+      <input type="number" id="woodWidth" min="1" step="0.1" required>
+
+      <label>אורך הדק (מטרים):</label>
+      <input type="number" id="deckLength" min="0.1" step="0.1" required>
+
+      <label>רוחב הדק (מטרים):</label>
+      <input type="number" id="deckWidth" min="0.1" step="0.1" required>
+
+      <label>מרווח בין לוחות (מ"מ):</label>
+      <input type="number" id="gap" min="0" step="0.1"  required>
+
+      <label>מחיר עץ למטר (ש"ח):</label>
+      <input type="number" id="woodPrice" min="0" step="0.01" required>
+
+      <button id="calculateDeck">חשב</button>
+    </section>
+
+    <section id="deckResult" class="result-section"></section>
+  </main>
+
+  <!-- הסבר על ספייר -->
+  <section class="spare-info">
+    <h2>למה חשוב להזמין לוחות עץ נוספים (ספייר)?</h2>
+    <p>
+      בעת תכנון דק, חשוב לקחת בחשבון לוחות עץ עודפים למקרה של שברים, חיתוכים לא מדויקים או טעויות במדידה. מומלץ להוסיף 5%-10% לכמות המחושבת.
+    </p>
+    <p>
+      דק איכותי דורש תכנון מדויק, אך תמיד כדאי שיהיו לוחות רזרביים להשלמות.
+    </p>
+  </section>
+
+  <!-- פוטר -->
+  <footer>
+    <p>ליצירת קשר: example@gmail.com | 050-1234567</p>
+  </footer>
+
+</body>
+</html>

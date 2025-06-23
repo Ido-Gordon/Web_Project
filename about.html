@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!-- הגדרת המסמך כ-HTML5 -->
+<html lang="he">
+<head>
+  <!-- הגדרת קידוד תווים ותצוגה מותאמת למסכים ניידים -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>אודות</title>
+
+  <!-- קישור לקובץ CSS המרכזי של האתר -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- כותרת האתר עם לוגו וכותרת ראשית -->
+  <header>
+    <div class="logo-container">
+      <!-- לוגו האתר עם מזהה לשימוש ב-JavaScript -->
+      <img src="Logo.png" alt="Logo" id="Logo" />
+      <h1>אודות האתר</h1>
+    </div>
+  </header>
+
+  <!-- תפריט ניווט בין דפי האתר -->
+  <!-- תפריט ניווט בין דפי האתר עם כפתור מחשבון נפתח -->
+<nav class="buttons-container">
+  <!-- תפריט מחשבון נפתח -->
+  <div class="dropdown">
+    <button class="btn dropdown-toggle" type="button">מחשבון</button>
+    <ul id="dropdownMenu" class="dropdown-menu-custom">
+      <li><a href="fence-calculator.html">מחשבון גדרות</a></li>
+      <li><a href="block-calculator.html">מחשבון בלוקים</a></li>
+      <li><a href="deck-calculator.html">מחשבון דק</a></li>
+    </ul>
+  </div>
+  <button class="btn" onclick="window.location.href='index.html'">דף הבית</button>
+  <button class="btn b" onclick="window.location.href='index0.html'">התנתקות</button>
+</nav>
+
+
+  <!-- תוכן ראשי של דף האודות -->
+  <main>
+    <section class="about-content">
+      <!-- תיאור הצוות -->
+      <h2>מי אנחנו?</h2>
+      <p>
+        אנחנו שלושה סטודנטים לתואר ראשון מאוניברסיטת בן-גוריון – עידו גורדון,
+        גל שבח ויותם מולכו. האתר שלנו עוזר לחשב כמויות חומרים לפרויקטי בנייה בקלות.
+      </p>
+
+      <!-- הסבר על מטרת האתר -->
+      <h2>מה מטרת האתר?</h2>
+      <p>
+        האתר נבנה כדי להקל על קבלנים ומנהלי עבודה לבצע חישובים מהירים של כמויות חומרי גלם לפרויקטים – בצורה מדויקת, חסכונית וידידותית.
+      </p>
+
+      <!-- קהל היעד -->
+      <h2>למי זה מתאים?</h2>
+      <p>
+        לאנשי מקצוע בתחום הבנייה שרוצים לקבל תוצאה מדויקת בלחיצת כפתור – בלי להסתבך עם חישובים ידניים.
+      </p>
+
+
+  <!-- תחתית העמוד עם פרטי יצירת קשר -->
+  <footer>
+    <p>
+      לשאלות נוספות: <a href="mailto:info@example.com">info@example.com</a>
+    </p>
+  </footer>
+
+  <!-- קישור לקובץ JavaScript חיצוני -->
+  <script src="JavaScrip.js"></script>
+</body>
+</html>

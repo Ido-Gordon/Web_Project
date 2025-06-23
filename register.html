@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>הרשמה למערכת</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="Logo.png" alt="Logo" id="Logo" />
+      <h1>הרשמה למערכת</h1>
+    </div>
+  </header>
+
+  <!--טופס הרשמה למערכת  -->
+  <main>
+    <section class="login-form">
+      <form method="POST" action="http://localhost:3000/register" id="registerForm" autocomplete="off">
+        <label for="fullname">שם מלא</label>
+        <input type="text" id="fullname" name="fullname" placeholder="הכנס שם מלא" required />
+
+        <label for="email">מייל</label>
+        <input type="email" id="email" name="email" placeholder="הכנס מייל" required />
+
+        <label for="password">סיסמה</label>
+        <input type="password" id="password" name="password" placeholder="הכנס סיסמה" required minlength="4" />
+
+        <label for="password2">אימות סיסמה</label>
+        <input type="password" id="password2" name="password2" placeholder="הכנס שוב את הסיסמה" required minlength="4" />
+
+        <button type="submit">הרשמה</button>
+        <div id="formAlert" style="color:red;margin-top:10px;"></div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>כבר רשום? <a href="index0.html">התחברות</a></p>
+  </footer>
+
+
+  <script>
+    // ולידציה בסיסית בצד לקוח
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.getElementById("registerForm");
+      const password = document.getElementById("password");
+      const password2 = document.getElementById("password2");
+      const alertBox = document.getElementById("formAlert");
+      form.addEventListener("submit", function (e) {
+        alertBox.textContent = "";
+        if (password.value !== password2.value) {
+          alertBox.textContent = "הסיסמאות לא תואמות!";
+          password2.value = "";
+          password2.focus();
+          e.preventDefault();
+        }
+        if (password.value.length < 4) {
+          alertBox.textContent = "הסיסמה חייבת להכיל לפחות 4 תווים.";
+          password.focus();
+          e.preventDefault();
+        }
+      });
+    });
+  </script>
+  
+</body>
+</html>

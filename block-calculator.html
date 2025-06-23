@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8">
+  <title>מחשבון בלוקים</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- כותרת עליונה עם לוגו מקפץ -->
+  <header>
+    <div class="logo-container">
+      <img id="Logo" src="Logo.png" alt="לוגו">
+      <h1>מחשבון כמות ועלות בלוקים</h1>
+    </div>
+  </header>
+
+  <!-- סרגל ניווט מעוצב לפי CSS שלך -->
+  <nav class="buttons-container">
+    <button onclick="window.location.href='index.html'">דף הבית</button>
+    <button onclick="window.location.href='fence-calculator.html'">מחשבון גדרות</button>
+    <button onclick="window.location.href='deck-calculator.html'">מחשבון דק</button>
+  </nav>
+
+  <!-- טופס מחשבון -->
+  <main>
+    <section class="login-form">
+      <label>:אורך הקיר (מטרים)</label>
+      <input type="number" id="wallLength" min="0.1" step="0.1" required>
+
+      <label>:גובה הקיר (מטרים)</label>
+      <input type="number" id="wallHeight" min="0.1" step="0.1" required>
+
+      <label for="blockType">בחר סוג בלוק:</label>
+      <div class="hint">גובה × רוחב × אורך (ס״מ)</div>
+      <select id="blockType" required>
+        <option value="" disabled selected hidden>בחר</option>
+        <optgroup label="בלוקים מבטון">
+          <option value="10x20x40:2.75">בלוק בטון 10×20×40</option>
+          <option value="20x20x40:3.75">בלוק בטון 20×20×40</option>
+        </optgroup>
+        <optgroup label="בלוקים מקלקר">
+          <option value="10x20x40:2.5">בלוק קלקר 10×20×40</option>
+          <option value="20x20x40:3.75">בלוק קלקר 20×20×40</option>
+        </optgroup>
+        <optgroup label="בלוקים איטונג">
+          <option value="10x25x60:22">בלוק איטונג 10×25×60</option>
+          <option value="20x25x60:30">בלוק איטונג 20×25×60</option>
+        </optgroup>
+        <optgroup label="בלוקים צמנט-בוץ">
+          <option value="10x20x40:1.5">בלוק בוץ 10×20×40</option>
+          <option value="20x20x40:2.5">בלוק בוץ 20×20×40</option>
+        </optgroup>
+        <optgroup label="בלוקים נוספים">
+          <option value="20x22x50:3">בלוק פומיס 20×22×50</option>
+          <option value="50x10x66.6:2">בלוק גבס 50×10×66.6</option>
+        </optgroup>
+      </select>
+
+      <label>מחיר ליחידה (ש"ח):</label>
+      <input type="number" id="blockPrice" min="0" step="0.01" required>
+
+      <button id="calculateBlocks">חשב</button>
+    </section>
+
+    <section id="blockResult" class="result-section"></section>
+  </main>
+
+  <!-- הסבר על בלוקים ספייר -->
+  <section class="spare-info">
+    <h2>למה חשוב להזמין בלוקים נוספים (ספייר)?</h2>
+    <p>
+      בעת תכנון ובנייה, חשוב לקחת בחשבון גם בלוקים עודפים,
+      על מנת להימנע מעיכובים בשלב העבודה. בלוקים עלולים להישבר במהלך ההובלה או הבנייה, 
+      ולעיתים יש צורך בחיתוכים והתאמות בשטח. רכישת כמות מדויקת מדי עלולה להוביל למחסור, לעיכובים ואף לעלויות נוספות בהזמנות משלימות.
+    </p>
+    <p>
+      להלן טווחי ההמלצה לתוספת בלוקים:
+    </p>
+    <table class="spare-table">
+      <thead>
+        <tr>
+          <th>סוג פרויקט</th>
+          <th>תוספת מומלצת</th>
+          <th>הערות</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>קיר פשוט, ללא פתחים</td>
+          <td>5%</td>
+          <td>לפרויקטים קטנים ומדויקים</td>
+        </tr>
+        <tr>
+          <td>קיר עם פתחים / פרויקט בינוני</td>
+          <td>7%–10%</td>
+          <td>סטנדרטי לפרויקטים רגילים</td>
+        </tr>
+        <tr>
+          <td>פרויקט גדול / אתר מורכב</td>
+          <td>10%–15%</td>
+          <td>כולל שברים, חיתוכים ועיכובים</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- פוטר -->
+  <footer>
+    <p>ליצירת קשר: example@gmail.com | 050-1234567</p>
+  </footer>
+
+  <!-- סקריפט חישוב -->
+  <script src="calc.js"></script>
+</body>
+</html>
